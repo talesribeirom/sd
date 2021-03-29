@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 
-const estudante_controller = require('./estudantes-controller')
+const tarefa_controller = require('./tarefas-controller')
 
 mongoose.connect('mongodb+srv://admin:1234@cluster0.h7tdc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.Promise = global.Promise
@@ -23,9 +23,9 @@ app.get('/', (req, res) => {
     res.send('teste oi')
 })
 
-router.post('/estudantes', estudante_controller.cadastrarEstudante)
-router.get('/estudantes', estudante_controller.listarEstudantes)
-router.get('/estudantes/:id', estudante_controller.buscarEstudante)
+router.post('/tarefas', tarefa_controller.cadastrarTarefa)
+router.get('/tarefas', tarefa_controller.listarTarefas)
+router.get('/tarefas/:id', tarefa_controller.buscarTarefa)
 
 app.use('/', router)
 
