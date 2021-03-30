@@ -1,5 +1,5 @@
 {
-  "name": "api-estudantes",
+  "name": "sd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neumar/api-estudantes.git"
+    "url": "git+https://github.com/talesribeirom/sd.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/neumar/api-estudantes/issues"
+    "url": "https://github.com/talesribeirom/sd/issues"
   },
-  "homepage": "https://github.com/neumar/api-estudantes#readme",
+  "homepage": "https://github.com/talesribeirom/sd#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.12.2"

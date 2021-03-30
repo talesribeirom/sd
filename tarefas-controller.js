@@ -1,5 +1,6 @@
 var Tarefas = require('./tarefas-model')
 
+
 exports.listarTarefas = function (req, res) {
     Tarefas.find({}, function (err, tarefas) {
         if (err) return next(err)
@@ -25,5 +26,21 @@ exports.cadastrarTarefa = function (req, res) {
             return next(err)
         }
     })
-    res.send('tarefa cadastrada com sucesso.')
+    res.send('Tarefa cadastrada com sucesso.')
+}
+
+exports.updateTarefa = function(req, res) {
+    const id = req.params.id;
+	Tarefas.findByIdAndUpdate(id, { content: req.body.content }, err => {
+        if (err) return res.send(500, err);
+        res.send("Tarefa atualizada!");
+        });
+    }
+
+exports.deleteTarefa = function (req, res, err) {  
+        Tarefas.deleteOne({_id:req.params.id},function(err,tarefa){
+        if(err)
+        res.send(err);
+        res.json({message:'Tarefa apagada!'});
+    });
 }
